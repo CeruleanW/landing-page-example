@@ -1,65 +1,79 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { Button, Typography } from '@material-ui/core';
+import Head from 'next/head';
+import ExpFooter from '../components/ExpFooter';
+import styles from '../styles/Home.module.css';
+import TryItNowButton from '../components/TryItNowButton';
+import ExpSlider from '../components/ExpSlider';
+
+
+function SpeakerImage() {
+  return (<img />);
+}
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Main Landing Page</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <section id='hero'>
+          <ExpSlider>
+            <ExpMenu />
+            <Typography></Typography>
+            <Typography></Typography>
+            <TryItNowButton type={'colored'} />
+          </ExpSlider>
+        </section>
+        <section id='red'>
+          <ExpMenu />
+          <TryItNowButton />
+          <Typography></Typography>
+          <Typography></Typography>
+          <Speaker direction={'right'} />
+          <Speaker direction={'left'} />
+          <DemoButton />
+        </section>
+        <section id='yellow'>
+          <ExpMenu />
+          <TryItNowButton />
+          <Box>
+            <Image></Image>
+            <Image></Image>
+          </Box>
+          <Typography></Typography>
+          <Typography></Typography>
+          <DemoButton />
+          <Image></Image>
+        </section>
+        <section id='perks'>
+          <ExpMenu />
+          <TryItNowButton type={'colored'} />
+          <Typography>PERKS</Typography>
+          <PerkGrid headingColor={"red"} heading={""} body={""}/>
+          <PerkGrid headingColor={"blue"} heading={""} body={""}/>
+          <PerkGrid headingColor={"yellow"} heading={""} body={""}/>
+        </section>
+        <section id='reviews'>
+          <ExpMenu />
+          <TryItNowButton />
+          <SpeakerImage/>
+          <SpeakerImage/>
+          <Typography>REVIEWS</Typography>
+          <Review rate={5} title={""} quote={""} />
+          <Review rate={5} title={""} quote={""} />
+          <Review rate={5} title={""} quote={""} />
+        </section>
+        <section id='Get EXP|CON now'>
+          <ExpMenu />
+          <Typography>GET EXP|CON NOW</Typography>
+          <Typography></Typography>
+          <TryItNowButton type={'colored'} />
+        </section>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <ExpFooter/>
     </div>
-  )
+  );
 }
