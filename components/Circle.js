@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Speaker() {
+export default function Circle() {
   return (
     <div>
       
