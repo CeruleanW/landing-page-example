@@ -1,19 +1,21 @@
-import { Button, Typography } from '@material-ui/core';
 import React from 'react';
+import { Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, TextField, Box} from '@material-ui/core';
 import ExpFooter from '../components/ExpFooter';
 import ExpMenu from '../components/ExpMenu';
 
-export default function payments() {
+
+export default function Payments() {
+  const handleChange = () => {};
+
   return (
     <div>
       <ExpMenu color={'black'} />
       <Typography>PAYMENT</Typography>
       <FormControl component='fieldset'>
-        <FormLabel component='legend'>PAYMENT</FormLabel>
         <RadioGroup
           aria-label='gender'
           name='gender1'
-          value={value}
+          value={''}
           onChange={handleChange}
         >
           <FormControlLabel value='basic' control={<Radio />} label='BASIC' />
