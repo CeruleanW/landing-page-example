@@ -28,5 +28,9 @@
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.3",
     "tiny-slider-react": "^0.5.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "react-is": "^17.0.1"
   }
 }
