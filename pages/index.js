@@ -16,19 +16,26 @@ import Circle from '../components/Circle';
 
 import styled from 'styled-components';
 
+const MySection = styled.section`
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  display: flex;
+`;
+
 function SpeakerImage() {
   return <img />;
 }
 
 function HeroSection() {
   return (
-    <section id='hero'>
-      <Box width={'100%'} height={'1080px'} className='relative flex'>
-        <div className='w-full z-0 absolute'>
-          <ExpSlider />
-        </div>
-        <ExpMenu />
-        <Box className='w-full relative z-10'>
+    <MySection id='hero'>
+      <div className='w-full z-0 absolute'>
+        <ExpSlider />
+      </div>
+      <Box className='w-full z-10 absolute'>
+        <ExpMenu className='mt-1 ml-1 z-10'/>
+        <Box className='w-full z-10'>
           <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
           <Typography className={'text-primary'}>
             Experience your favourite artists like never before and from the
@@ -37,13 +44,13 @@ function HeroSection() {
           <TryItNowButton type={'colored'} />
         </Box>
       </Box>
-    </section>
+    </MySection>
   );
 }
 
 function RedSection() {
   return (
-    <section id='red'>
+    <MySection id='red'>
       <ExpMenu />
       <TryItNowButton />
       <H2>SUPERIOR SOUND</H2>
@@ -53,18 +60,19 @@ function RedSection() {
       <Speaker direction={'right'} />
       <Speaker direction={'left'} />
       <DemoButton />
-    </section>
+    </MySection>
   );
 }
 
+const YellowSectionContainer = styled(MySection)`
+  background-image: ${'url(/Image 4.png)'};
+`;
+
 // reveal an extra circle for the image when hover
 function YellowSection() {
-  const Section = styled.section`
-    height: 1080px;
-    background-image: ${'url(/Image 4.png)'};
-  `;
+
   return (
-    <section id='yellow' className={''}>
+    <YellowSectionContainer id='yellow' className={''}>
       <Box className={'bg color yellow'}>
         <ExpMenu />
         <TryItNowButton />
@@ -77,7 +85,7 @@ function YellowSection() {
         <Circle />
         <Circle />
       </Box>
-    </section>
+    </YellowSectionContainer>
   );
 }
 
