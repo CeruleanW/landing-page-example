@@ -3,74 +3,28 @@ import Head from 'next/head';
 import ExpFooter from '../components/ExpFooter';
 // import styles from '../styles/Home.module.css';
 import TryItNowButton from '../components/TryItNowButton';
-import ExpSlider from '../components/ExpSlider';
 import ExpMenu from '../components/ExpMenu';
-import Speaker from '../components/Speaker';
 import DemoButton from '../components/DemoButton';
 import Image from 'next/image';
 import PerkGrid from '../components/PerkGrid';
 import Review from '../components/Review';
-import H1 from '../components/H1';
 import H2 from '../components/H2';
 import Circle from '../components/Circle';
-
 import styled from 'styled-components';
-
-const MySection = styled.section`
-  position: relative;
-  width: 100%;
-  height: 1080px;
-  display: flex;
-`;
+import { HeroSection } from '../components/HeroSection';
+import { RedSection } from '../components/RedSection';
+import { BaseSection } from '../components/BaseSection';
 
 function SpeakerImage() {
   return <img />;
 }
 
-function HeroSection() {
-  return (
-    <MySection id='hero'>
-      <div className='w-full z-0 absolute'>
-        <ExpSlider />
-      </div>
-      <Box className='w-full z-10 absolute'>
-        <ExpMenu className='mt-1 ml-1 z-10'/>
-        <Box className='w-full z-10'>
-          <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
-          <Typography className={'text-primary'}>
-            Experience your favourite artists like never before and from the
-            comfort of your own home.
-          </Typography>
-          <TryItNowButton type={'colored'} />
-        </Box>
-      </Box>
-    </MySection>
-  );
-}
-
-function RedSection() {
-  return (
-    <MySection id='red'>
-      <ExpMenu />
-      <TryItNowButton />
-      <H2>SUPERIOR SOUND</H2>
-      <Typography variant={'subtitle1'}>
-        Experience live versions of your favourite songs.
-      </Typography>
-      <Speaker direction={'right'} />
-      <Speaker direction={'left'} />
-      <DemoButton />
-    </MySection>
-  );
-}
-
-const YellowSectionContainer = styled(MySection)`
+const YellowSectionContainer = styled(BaseSection)`
   background-image: ${'url(/Image 4.png)'};
 `;
 
 // reveal an extra circle for the image when hover
 function YellowSection() {
-
   return (
     <YellowSectionContainer id='yellow' className={''}>
       <Box className={'bg color yellow'}>
@@ -176,8 +130,8 @@ export default function Home() {
           <PerksSection></PerksSection>
           <ReviewsSection></ReviewsSection>
           <CTASection></CTASection>
-          <ExpFooter />
         </Container>
+          <ExpFooter />
       </main>
     </>
   );

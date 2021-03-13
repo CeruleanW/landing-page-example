@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import Image from 'next/image';
 import { Box, Button, Typography } from '@material-ui/core';
-// import AliceCarousel from 'react-alice-carousel';
-// import 'react-alice-carousel/lib/alice-carousel.css';
 import { styled } from '@material-ui/core/styles';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { Plane, useCurtains } from "react-curtains";
+import gsap from "gsap";
+import { vertexShader, fragmentShader } from "./shaders/shaders";
 
 const SlideImage = (props) => {
   const { src, alt } = props;
@@ -62,8 +63,6 @@ export default function ExpSlider(props) {
 
   return (
     <>
-      {/* <AliceCarousel {...settings} />
-       */}
       <Carousel {...settings}>
         <SlideImage
           src={'/Image 1.png'}
