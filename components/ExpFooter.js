@@ -7,7 +7,7 @@ export default function ExpFooter() {
     <footer>
       <EmailLink />
       <Typography>EXP|CON</Typography>
-      <Typography>2019 © All Rights Reserved | Speer Technologies Incorporated</Typography>
+      <Typography><small>2019 © All Rights Reserved | Speer Technologies Incorporated</small></Typography>
     </footer>
   );
 }
