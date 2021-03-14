@@ -8,6 +8,7 @@ import { BaseSection } from "./BaseSection";
 import styled from 'styled-components';
 import { useCurtains } from "react-curtains";
 import gsap from "gsap";
+import CurtainSlider from './CurtainSlider';
 
 const Text = styled(Typography)`
   text-align: center;
@@ -26,27 +27,33 @@ export function HeroSection() {
   });
 
   return (
-    <BaseSection id='hero'>
-      <div className='w-full z-0 absolute'>
-        <ExpSlider />
-      </div>
-      <Box className='w-full h-full z-10 absolute flex flex-col'>
-        <div className={'w-max mt-10 ml-10'}>
-          <ExpMenu className='z-10' />
+    <>
+      {/* <div style={{height: '100vh'}} onClick={() => console.log('test')}>
+      <CurtainSlider/>
+      </div> */}
+      <BaseSection id='hero'>
+        <div className='w-full z-0 absolute' style={{height: '100%'}}>
+          {/* <ExpSlider /> */}
+          <CurtainSlider/>
         </div>
-        <Box className='w-full z-10 content-center flex-grow pt-96'>
-          <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
-          <div className='flex justify-center mt-5'> 
-            <Text className={''}>
-              Experience your favourite artists like never before and from the
-              comfort of your own home.
-            </Text>
+        <Box className='w-full h-full z-10 absolute flex flex-col'>
+          <div className={'w-max mt-10 ml-10'}>
+            <ExpMenu className='z-10' />
           </div>
-          <div className={'flex justify-center mt-5'}>
-            <TryItNowButton type={'colored'} />
-          </div>
+          <Box className='w-full z-10 content-center pt-96'>
+            <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
+            <div className='flex justify-center mt-5'>
+              <Text className={''}>
+                Experience your favourite artists like never before and from the
+                comfort of your own home.
+              </Text>
+            </div>
+            <div className={'flex justify-center mt-5'}>
+              <TryItNowButton type={'colored'} />
+            </div>
+          </Box>
         </Box>
-      </Box>
-    </BaseSection>
+      </BaseSection>
+    </>
   );
 }

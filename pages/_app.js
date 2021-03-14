@@ -6,7 +6,7 @@ import { theme } from '../styles/theme';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Curtains>
+    <Curtains autoRender={false} >
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>

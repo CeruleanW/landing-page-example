@@ -3,11 +3,12 @@
 @tailwind utilities;
 @import url("https://use.typekit.net/wvv1ieq.css");
 
-/* @import "react-alice-carousel/lib/alice-carousel.css"; */
 
-.alice-carousel__dots {
-  background-color: black;
-  position: absolute;
-  top: 1026px;
-  left: 926px;
+/* curtains canvas */
+.curtains-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
