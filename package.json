@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -28,6 +28,7 @@
     "sass": "^1.32.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
+    "stylelint-config-recommended": "^4.0.0",
     "tailwindcss": "^2.0.3",
     "tiny-slider-react": "^0.5.3"
   },
