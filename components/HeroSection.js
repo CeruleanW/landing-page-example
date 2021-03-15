@@ -32,7 +32,7 @@ export function HeroSection() {
       <CurtainSlider/>
       </div> */}
       <BaseSection id='hero'>
-        <div className='w-full z-0 absolute' style={{height: '100%'}}>
+        <div className='w-full absolute' style={{height: '100%'}}>
           {/* <ExpSlider /> */}
           <CurtainSlider/>
         </div>

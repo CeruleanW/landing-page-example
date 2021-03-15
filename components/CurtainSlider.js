@@ -28,15 +28,27 @@ const itemAlts = [
   'Slide Picture',
   'Slide Picture',
 ];
-const rednerItems = itemSrcs.map((src, index) => (
+const renderItems = itemSrcs.map((src, index) => (
   <SlideImage src={src} alt={itemAlts[index]} key={'slide-image-' + index} />
 ));
 
+const DotItem = styled.button`
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background-color: ${(props) => props.active ? '#000' : '#FFFFFF'};
+  border: 1px solid #FFFFFF;
+  opacity: 1;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  margin: 7px;
+  border-radius: 50%;
+`;
+
+//TODO: 1. change active dot color; 2.disable active dot click
 export default function CurtainSlider() {
+  const maxTextures = itemSrcs.length;
   const [plane, setPlane] = useState(null);
   const [activeTexture, setActiveTexture] = useState(1);
-
-  const maxTextures = itemSrcs.length;
 
   const slideshowInner = useRef(null);
   const isChanging = useRef(false);
@@ -69,14 +81,14 @@ export default function CurtainSlider() {
           fromTexture: plane.textures[activeTexture + 1],
         });
 
-        setTimeout(playNextSlide, autoplaySpeed);
+        autoplayTimer.current = setTimeout(playNextSlide, autoplaySpeed);
       }
     },
     [plane]
   );
 
   // update the current slide and next slide
-  const handleTransitionComplete = (nextTextureIndex) => {
+  const handleTransitionComplete = (activeTexture) => {
     isChanging.current = false;
     tween.current = null;
 
@@ -112,7 +124,23 @@ export default function CurtainSlider() {
         duration: transitionDuration,
         value: 90,
         ease: 'power2.inOut',
-        onComplete: handleTransitionComplete,
+        onComplete: () => handleTransitionComplete(activeTexture),
+      });
+    }
+  };
+
+  const jumpToSlide = (index) => {
+    if (!isChanging.current && plane) {
+      isChanging.current = true;
+      const nextTextureIndex = getNextTextureIndex(index, maxTextures);
+      const nextImg = plane.images[nextTextureIndex];
+      nextTex.current.setSource(nextImg);
+
+      tween.current = gsap.to(plane.uniforms.transitionTimer, {
+        duration: transitionDuration,
+        value: 90,
+        ease: 'power2.inOut',
+        onComplete: () => handleTransitionComplete(index),
       });
     }
   };
@@ -139,26 +167,39 @@ export default function CurtainSlider() {
     setPlane(plane);
   };
 
+  const handleIndicatorClick = (imgIndex) => {
+    console.log('dot is clicked');
+    isChanging.current = false;
+    clearTimeout(autoplayTimer.current);
+    jumpToSlide(imgIndex);
+  };
+
   return (
-    <StyledPlane
-      className='Slideshow'
-      // plane init parameters
-      vertexShader={vertexShader}
-      fragmentShader={fragmentShader}
-      uniforms={uniforms}
-      // plane events
-      onLoading={onLoading}
-      onReady={onReady}
-    >
-        {/* <p className={'absolute z-20 text-white'} >test</p> */}
-      <div ref={slideshowInner}>
-        <img
-          src='./displacement.jpg'
-          data-sampler='displacement'
-          alt='Displacement for transition'
-        />
-        {rednerItems}
+    <>
+      <StyledPlane
+        className='Slideshow absolute'
+        // plane init parameters
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
+        uniforms={uniforms}
+        // plane events
+        onLoading={onLoading}
+        onReady={onReady}
+      >
+        <div ref={slideshowInner}>
+          <img
+            src='./displacement.jpg'
+            data-sampler='displacement'
+            alt='Displacement for transition'
+          />
+          {renderItems}
+        </div>
+      </StyledPlane>
+      <div className={'absolute z-20 bottom-3 w-full flex justify-center'}>
+        {itemSrcs.map((item, index) => (
+          <DotItem key={'dot-' + index} onClick={() => handleIndicatorClick(index)} />
+        ))}
       </div>
-    </StyledPlane>
+    </>
   );
 }
