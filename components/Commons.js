@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { theme } from '../styles/theme';
 
-export const BaseButton = styled(Button)`
+export const BaseButton = styled.button`
   border-radius: 79px;
   opacity: 1;
   width: 284px;

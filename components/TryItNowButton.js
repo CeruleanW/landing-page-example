@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
 import { BaseButton, KnockoutButton } from './Commons';
+import styles from '../styles/btn.module.scss';
 
 const ColoredButton = styled(BaseButton)`
   color: ${theme.palette.white};
@@ -20,12 +21,19 @@ export default function TryItNowButton(props) {
   const { type, size, bgcolor } = props;
 
   return (
-    <Link href='/pricing'>
-      {type === 'colored' ? (
-        <ColoredButton>TRY IT NOW</ColoredButton>
-      ) : (
-        <KnockoutButton bgcolor={bgcolor}>TRY IT NOW</KnockoutButton>
-      )}
-    </Link>
+    <>
+      <Link href='/pricing'>
+        {type === 'colored' ? (
+          <ColoredButton
+            data-text='TRY IT NOW'
+            className={styles['btn-mix-noborder']}
+          />
+        ) : (
+          <KnockoutButton bgcolor={bgcolor} disableElevation>
+            TRY IT NOW
+          </KnockoutButton>
+        )}
+      </Link>
+    </>
   );
 }
