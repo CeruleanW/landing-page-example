@@ -28,9 +28,6 @@ export function HeroSection() {
 
   return (
     <>
-      {/* <div style={{height: '100vh'}} onClick={() => console.log('test')}>
-      <CurtainSlider/>
-      </div> */}
       <BaseSection id='hero'>
         <div className='w-full absolute' style={{height: '100%'}}>
           {/* <ExpSlider /> */}
