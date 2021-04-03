@@ -9,6 +9,18 @@ const StyledPlane = styled(Plane)`
   height: 100%;
 `;
 
+const DotItem = styled.button`
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background-color: ${(props) => props.active ? '#000' : '#FFFFFF'};
+  border: 1px solid #FFFFFF;
+  opacity: 1;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  margin: 7px;
+  border-radius: 50%;
+`;
+
 const SlideImage = (props) => {
   const { src, alt } = props;
   return (
@@ -22,7 +34,7 @@ const SlideImage = (props) => {
 
 //Inputs
 const autoplaySpeed = 4000;
-const itemSrcs = ['/Image 1.png', '/Image 2.png', '/Image 3.png'];
+const itemSrcs = ['/images/Image 1.png', '/images/Image 2.png', '/images/Image 3.png'];
 const itemAlts = [
   'Slide Picture showing two singers are shaking hands with audience',
   'Slide Picture',
@@ -32,17 +44,7 @@ const renderItems = itemSrcs.map((src, index) => (
   <SlideImage src={src} alt={itemAlts[index]} key={'slide-image-' + index} />
 ));
 
-const DotItem = styled.button`
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  background-color: ${(props) => props.active ? '#000' : '#FFFFFF'};
-  border: 1px solid #FFFFFF;
-  opacity: 1;
-  width: 17px;
-  height: 17px;
-  display: inline-block;
-  margin: 7px;
-  border-radius: 50%;
-`;
+
 
 //TODO: 1. change active dot color; 2.disable active dot click
 export default function CurtainSlider() {
