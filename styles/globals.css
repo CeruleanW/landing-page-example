@@ -2,13 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://use.typekit.net/wvv1ieq.css");
-
-
-/* curtains canvas */
-.curtains-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
+@import 'curtains-canvas.css';

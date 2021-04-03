@@ -1,6 +1,5 @@
 import { Box, Typography } from '@material-ui/core';
 import TryItNowButton from './TryItNowButton';
-import ExpSlider from './ExpSlider';
 import ExpMenu from './ExpMenu';
 import H1 from './H1';
 import { theme } from '../styles/theme';
@@ -30,7 +29,6 @@ export function HeroSection() {
     <>
       <BaseSection id='hero'>
         <div className='w-full absolute' style={{height: '100%'}}>
-          {/* <ExpSlider /> */}
           <CurtainSlider/>
         </div>
         <Box className='w-full h-full z-10 absolute flex flex-col'>
