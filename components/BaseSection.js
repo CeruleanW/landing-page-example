@@ -6,4 +6,5 @@ export const BaseSection = styled.section`
   width: 100%;
   height: 1080px;
   display: flex;
+  overflow: hidden;
 `;
