@@ -1,18 +1,46 @@
 import React, { useState } from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { theme } from '../styles/theme';
+import { Transition } from 'react-transition-group';
+
+const iconWidth = 56 * 1.8;
+const iconHeight = 34 * 1.7;
+const openedVisibleZindex = 1000;
+const openMenuTransitionStyles = css`
+  transition: 0.7s;
+`;
+
+const transitionStyles = {
+  entering: { width: '200vw', height: '200vw' },
+  entered:  { width: '200vw', height: '200vw' },
+  exiting:  { width: 0, height: 0 },
+  exited:  { width: 0, height: 0 },
+};
+
+const ExpandingCircle = styled.div`
+  position: absolute;
+  ${openMenuTransitionStyles}
+  background-color: ${props => props.bgColor};
+  height: ${ ({state}) => transitionStyles[state].height };
+  width: ${ ({state}) => transitionStyles[state].width };
+  border-radius: 50%;
+  top: 30px;
+  left: 50px;
+  transform: translate(-30%, -45%);
+  z-index: 11;
+`;
 
 const ExpMenuIcon = styled(MenuIcon)`
   opacity: 1;
-  /* fill: ${(props) =>
-    props.textColor
-      ? theme.palette[`${props.textColor}`]
-      : theme.palette.primary.main}; */
-  width: ${56 * 1.8}px;
-  height: ${34 * 1.7}px;
+  width: ${iconWidth}px;
+  height: ${iconHeight}px;
   display: inline flow-root;
   vertical-align: middle;
+  color: ${(props) => props.iconColor};
+  position: relative;
+  z-index: ${openedVisibleZindex};
+  ${openMenuTransitionStyles}
 `;
 
 const ExpMenuText = styled.p`
@@ -28,6 +56,9 @@ const ExpMenuText = styled.p`
   overflow: hidden;
   white-space: nowrap;
   vertical-align: middle;
+  position: relative;
+  z-index: ${openedVisibleZindex};
+  ${openMenuTransitionStyles}
 `;
 
 const ListText = styled.p`
@@ -41,48 +72,53 @@ const ListText = styled.p`
   opacity: 1;
 `;
 
-const MenuItem = (props) => {
-  const { text, link, hoverColor } = props;
-
-  return (
-    <li>
-      <a href={link}>
-        <ListText hoverColor={hoverColor} >{text}</ListText>
-      </a>
-    </li>
-  );
-};
-
-const MyMenuItem = styled(MenuItem)`
-`;
-
-ExpMenu.defaultProps = {
-  color: 'white',
-};
-
 const Ul = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-top: 20px;
   margin-left: 29px;
+  position: absolute;
+  z-index: ${openedVisibleZindex};
 `;
 
+const MenuItem = (props) => {
+  const { text, link, hoverColor } = props;
+
+  return (
+    <li>
+      <a href={link}>
+        <ListText hoverColor={hoverColor}>{text}</ListText>
+      </a>
+    </li>
+  );
+};
+
+ExpMenu.defaultProps = {
+  color: 'white',
+  bgColor: 'white',
+  circleBgColor: 'orange',
+};
+
 export default function ExpMenu(props) {
-  const { color, bgColor } = props;
+  const { color, bgColor, circleBgColor } = props;
   const [isOpened, setIsOpened] = useState(false);
+
+  const duration = 1000;
 
   return (
     <div className='container relative'>
-      <div className='absolute'></div>
+      <Transition in={isOpened} timeout={duration}>
+        {(state) => (
+          // state change: exited -> entering -> entered -> exiting -> exited
+          <ExpandingCircle bgColor={circleBgColor} state={state}/>
+        )}
+      </Transition>
       <ExpMenuIcon
         onClick={() => setIsOpened(!isOpened)}
-        textColor={isOpened ? bgColor : null}
-        style={{ color: isOpened ? bgColor : theme.palette.primary.main }}
+        iconColor={isOpened ? bgColor : theme.palette.primary.main}
       />
-      <ExpMenuText textColor={isOpened ? bgColor : null}>
-        EXP|CON
-      </ExpMenuText>
+      <ExpMenuText textColor={isOpened ? bgColor : null}>EXP|CON</ExpMenuText>
       {isOpened ? (
         <Ul className=''>
           <MenuItem text='WHAT IS IT' link='' hoverColor={bgColor} />

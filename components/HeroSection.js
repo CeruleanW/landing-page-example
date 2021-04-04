@@ -33,7 +33,7 @@ export function HeroSection() {
         </div>
         <Box className='w-full h-full z-10 absolute flex flex-col'>
           <div className={'w-max mt-10 ml-10'}>
-            <ExpMenu className='z-10' />
+            <ExpMenu className='z-10' bgColor='black'/>
           </div>
           <Box className='w-full z-10 content-center pt-96'>
             <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
