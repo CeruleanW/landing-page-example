@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-export default function Circle() {
+const StyledCircle = styled.div`
+  border-radius: 50%;
+`;
+
+export default function Circle(props) {
   return (
-    <div>
-      
-    </div>
+    <StyledCircle>
+      {props.children}
+    </StyledCircle>
   )
 }
