@@ -37,7 +37,7 @@ const ExpMenuIcon = styled(MenuIcon)`
   height: ${iconHeight}px;
   display: inline flow-root;
   vertical-align: middle;
-  color: ${(props) => props.iconColor};
+  color: ${(props) => props.iconcolor};
   position: relative;
   z-index: ${openedVisibleZindex};
   ${openMenuTransitionStyles}
@@ -65,7 +65,7 @@ const ListText = styled.p`
   text-align: left;
   font: normal normal bold 47px/57px liberation-sans;
   letter-spacing: 4.7px;
-  color: #ffffff;
+  color: ${theme.palette.white};
   &:hover {
     color: ${(props) => props.hoverColor};
   }
@@ -95,9 +95,9 @@ const MenuItem = (props) => {
 };
 
 ExpMenu.defaultProps = {
-  color: 'white',
-  bgColor: 'white',
-  circleBgColor: 'orange',
+  color: theme.palette.white,
+  bgColor: theme.palette.white,
+  circleBgColor: theme.palette.black,
 };
 
 export default function ExpMenu(props) {
@@ -116,7 +116,7 @@ export default function ExpMenu(props) {
       </Transition>
       <ExpMenuIcon
         onClick={() => setIsOpened(!isOpened)}
-        iconColor={isOpened ? bgColor : theme.palette.primary.main}
+        iconcolor={isOpened ? bgColor : theme.palette.primary.main}
       />
       <ExpMenuText textColor={isOpened ? bgColor : null}>EXP|CON</ExpMenuText>
       {isOpened ? (

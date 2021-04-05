@@ -2,9 +2,7 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
-
-const pageTitle = "Idea Droper";
-
+React.useLayoutEffect = React.useEffect
 export default class MyDocument extends Document {
   render() {
     return (

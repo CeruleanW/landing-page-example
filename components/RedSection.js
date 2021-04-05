@@ -1,17 +1,12 @@
-import TryItNowButton from './TryItNowButton';
-import ExpMenu from './ExpMenu';
 import Speaker from './Speaker';
 import DemoButton from './DemoButton';
 import H2 from './H2';
-import { BaseSection } from './BaseSection';
+import { SingleColorSection } from './BaseSection';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
+import { WithLayoutTopMenu } from './WithLayoutTopMenu';
 
 const sectionBgColor = theme.palette.red;
-
-const RedContainer = styled(BaseSection)`
-  background-color: ${sectionBgColor};
-`;
 
 const Subtitle = styled.p`
   text-align: left;
@@ -23,12 +18,8 @@ const Subtitle = styled.p`
 
 export function RedSection() {
   return (
-    <RedContainer id='red' className={'flex flex-col'}>
-      <div className={'w-full mt-16 px-12 z-10 flex'}>
-        <ExpMenu bgColor={sectionBgColor} />
-        <div className='flex-grow'></div>
-        <TryItNowButton bgcolor={sectionBgColor} />
-      </div>
+    <SingleColorSection id='red' className={'flex flex-col'} sectionBgColor={sectionBgColor} >
+      <WithLayoutTopMenu sectionBgColor={sectionBgColor} />
       <div className={'flex flex-grow'}>
         <div className={'flex flex-col ml-36 mt-64 max-w-4xl'}>
           <H2>SUPERIOR SOUND</H2>
@@ -36,7 +27,7 @@ export function RedSection() {
             Experience live versions of your favourite songs.
           </Subtitle>
           <div className={'mt-8'}>
-            <DemoButton bgcolor={sectionBgColor}/>
+            <DemoButton bgcolor={sectionBgColor} />
           </div>
         </div>
         <div className={'mr-32 flex-grow relative'}>
@@ -48,6 +39,8 @@ export function RedSection() {
           </div>
         </div>
       </div>
-    </RedContainer>
+    </SingleColorSection>
   );
+
 }
+

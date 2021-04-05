@@ -13,7 +13,7 @@ const ColoredButton = styled(BaseButton)`
 `;
 
 TryItNowButton.defaultProps = {
-  type: 'white',
+  type: 'white', // types: white || colored
   size: 'medium',
 };
 
