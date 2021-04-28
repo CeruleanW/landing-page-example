@@ -1297,10 +1297,10 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
   integrity sha512-KxnUB0ZMlnUWCsx2Z8MUsr6qV6ja1w9ArPErJaJaF8a5SOWoHLIszeCTKGRGRgtLgYrs1E8CHkNSP1VZTTPc9g==
 
-curtainsjs@>=8.0.2:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/curtainsjs/-/curtainsjs-8.0.5.tgz#2eceb6653f0e19e84eebc261cb49a8aae07bb4be"
-  integrity sha512-IUHqvGygzrU8MAE1IIvin5MkT7vQbtaqsjMsagZ6W2OKOSVLbKv/v/vFs6Kj+zv8yLx63JAYyAgy2asQ+iAG+w==
+curtainsjs@>=8.1.0:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/curtainsjs/-/curtainsjs-8.1.2.tgz#decf1a688957cdb8fc3eecbee0a250cb399beee1"
+  integrity sha512-JQTBmYCc5uqJ3eHRru32cw9y5tYqwvRofhQB4af6Ic0ENegrUhRh/ENNg130MTMoeIS+fumTxRYIsmv5FEgv0Q==
 
 dashify@^2.0.0:
   version "2.0.0"
@@ -2919,12 +2919,12 @@ react-bootstrap@^1.5.1:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-curtains@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/react-curtains/-/react-curtains-1.0.9.tgz#b8ea8d3a048531230af4957469c3eb64ba7ed7cb"
-  integrity sha512-PxkDGIsOMZNUUsp6tE69aiIz7vyuf/weZE8kmWsPF8sX08wEG1m3Caeo86GMUBHBjjj/GmOf3YAxnMZ7d2G/fg==
+react-curtains@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/react-curtains/-/react-curtains-1.0.10.tgz#e697c1cd6ec2d2c97d8dbaca043305d75fd43bfa"
+  integrity sha512-8bzyl/v8nYDUlYUlTGvj7WWrzIcJaGO1W+jv3oIWZkeJtBpd1KoJRGS4cTXJIOiEyLsVUMBOp9i5bK+Po7Ow7w==
   dependencies:
-    curtainsjs ">=8.0.2"
+    curtainsjs ">=8.1.0"
 
 react-dom@17.0.1:
   version "17.0.1"

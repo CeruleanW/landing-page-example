@@ -1,11 +1,11 @@
-import { Typography } from '@material-ui/core';
+import React, { useState, useRef } from 'react';
 import DemoButton from './DemoButton';
 import H2 from './H2';
-import Circle from './Circle';
 import { BaseSection } from './BaseSection';
 import { theme } from '../styles/theme';
 import styled from 'styled-components';
 import { WithLayoutTopMenu } from './WithLayoutTopMenu';
+import { Subtitle } from './Subtitle';
 
 const sectionBgColor = theme.palette.yellow;
 
@@ -13,23 +13,19 @@ const YellowSectionContainer = styled(BaseSection)`
   background-color: ${sectionBgColor};
 `;
 
-const BgDiv = styled.div`
+const BgImageDiv = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("./images/Image 4.png");
+  background-image: url('./images/Image 4.png');
   background-size: cover;
   z-index: 0;
-  mask: url("./circle.svg") 30% 24% / 400px no-repeat,
-        url("./circle.svg") 6% 80% / 590px no-repeat,
-        url("./circle.svg") 110% 130% / 480px no-repeat;
-`;
-
-const Subtitle = styled.p`
-  text-align: left;
-  font: normal normal normal 51px/61px liberation-sans;
-  letter-spacing: 5.1px;
-  color: #191919;
-  opacity: 1;
+  mask: url('./circle.svg') 30% 29% / 360px no-repeat,
+    url('./circle.svg') 6% 80% / 590px no-repeat,
+    url('./circle.svg') 110% 130% / 480px no-repeat
+      ${(props) =>
+        props.x && props.y
+          ? `, url('./circle.svg') ${props.x}px ${props.y}px / 200px no-repeat`
+          : ';'};
 `;
 
 const ContentContainer = styled.div`
@@ -38,9 +34,28 @@ const ContentContainer = styled.div`
 
 // reveal an extra circle for the image when hover
 export function YellowSection() {
+  const [mousePosition, setMousePosition] = useState([0, 0]);
+
+  const handleMouseMove = (event) => {
+      setMousePosition([
+        event.nativeEvent.offsetX - 100,
+        event.nativeEvent.offsetY - 100
+      ]);
+  };
+
+  const handleMouseOut = () => {
+    setMousePosition([0, 0]);
+  };
+
   return (
     <YellowSectionContainer id='yellow' className={'flex flex-col relative'}>
-      <BgDiv className={'absolute'}></BgDiv>
+      <BgImageDiv
+        className={'absolute'}
+        onMouseMove={handleMouseMove}
+        onMouseOut={handleMouseOut}
+        x={mousePosition[0]}
+        y={mousePosition[1]}
+      />
       <WithLayoutTopMenu sectionBgColor={sectionBgColor} />
       <div className={'flex relative'}>
         <ContentContainer className='absolute top-80 right-32'>
@@ -53,7 +68,6 @@ export function YellowSection() {
           </div>
         </ContentContainer>
       </div>
-
     </YellowSectionContainer>
   );
 }

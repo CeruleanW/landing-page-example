@@ -1,5 +1,5 @@
 import React from 'react';
-import { KnockoutButton } from './Commons';
+import { KnockoutButton } from './Buttons';
 
 //no link currently
 export default function DemoButton(props) {

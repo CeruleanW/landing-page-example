@@ -54,10 +54,6 @@ https://xd.adobe.com/view/2fc0268c-c59f-4ac5-46f8-fe3c819f1e6f-59f1/
 - White CTA Buttons should have a hover effect similar to this: https://codepen.io/nguyencaotai1969/pen/oNNJdJr
 - The ‘Try it now’ button should take you to the pricing screen
 
-
-
-
-
 ### Section 6: Get EXP|CON now
 
 - The ‘Try it now’ button should take you to the pricing screen

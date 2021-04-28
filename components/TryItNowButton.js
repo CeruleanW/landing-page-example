@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
-import { BaseButton, KnockoutButton } from './Commons';
+import { BaseButton, KnockoutButton } from './Buttons';
 import styles from '../styles/btn.module.scss';
 
 const ColoredButton = styled(BaseButton)`
@@ -26,10 +26,11 @@ export default function TryItNowButton(props) {
         {type === 'colored' ? (
           <ColoredButton
             data-text='TRY IT NOW'
-            className={styles['btn-mix-noborder']}
+            className={`${styles['btn-mix-noborder']}`}
+            size={size}
           />
         ) : (
-          <KnockoutButton bgcolor={bgcolor} disableElevation>
+          <KnockoutButton bgcolor={bgcolor} size={size} disableElevation>
             TRY IT NOW
           </KnockoutButton>
         )}

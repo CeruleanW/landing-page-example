@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import music from './audio';
 
 const Img = styled.div`
-  background: ${(props) => props.bgImg};
+  background: ${(props) => `transparent url('${props.src}') 0% 0% no-repeat padding-box`};
   box-shadow: 5px 40px 30px #9b2525;
   opacity: 1;
   width: 250px;
@@ -15,7 +15,6 @@ const Img = styled.div`
 
 export default function Speaker(props) {
   const { src } = props;
-  const bgImg = `transparent url('${src}') 0% 0% no-repeat padding-box`;
 
   const handleClick = () => {
     console.log('music player clicked');
@@ -28,7 +27,7 @@ export default function Speaker(props) {
 
   return (
     <>
-      <Img bgImg={bgImg} onClick={handleClick} />
+      <Img src={src} onClick={handleClick} />
     </>
   );
 }

@@ -10,9 +10,9 @@ const StyledPlane = styled(Plane)`
 `;
 
 const DotItem = styled.button`
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  background-color: ${(props) => props.active ? '#000' : '#FFFFFF'};
-  border: 1px solid #FFFFFF;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  background-color: ${(props) => (props.active ? '#000' : '#FFFFFF')};
+  border: 1px solid #ffffff;
   opacity: 1;
   width: 17px;
   height: 17px;
@@ -34,7 +34,11 @@ const SlideImage = (props) => {
 
 //Inputs
 const autoplaySpeed = 4000;
-const itemSrcs = ['/images/Image 1.png', '/images/Image 2.png', '/images/Image 3.png'];
+const itemSrcs = [
+  '/images/Image 1.png',
+  '/images/Image 2.png',
+  '/images/Image 3.png',
+];
 const itemAlts = [
   'Slide Picture showing two singers are shaking hands with audience',
   'Slide Picture',
@@ -43,8 +47,6 @@ const itemAlts = [
 const renderItems = itemSrcs.map((src, index) => (
   <SlideImage src={src} alt={itemAlts[index]} key={'slide-image-' + index} />
 ));
-
-
 
 //TODO: 1. change active dot color; 2.disable active dot click
 export default function CurtainSlider() {
@@ -199,7 +201,10 @@ export default function CurtainSlider() {
       </StyledPlane>
       <div className={'absolute z-20 bottom-3 w-full flex justify-center'}>
         {itemSrcs.map((item, index) => (
-          <DotItem key={'dot-' + index} onClick={() => handleIndicatorClick(index)} />
+          <DotItem
+            key={'dot-' + index}
+            onClick={() => handleIndicatorClick(index)}
+          />
         ))}
       </div>
     </>

@@ -21,7 +21,7 @@
     "react": "17.0.1",
     "react-alice-carousel": "^2.4.0",
     "react-bootstrap": "^1.5.1",
-    "react-curtains": "^1.0.9",
+    "react-curtains": "^1.0.10",
     "react-dom": "17.0.1",
     "react-responsive-carousel": "^3.2.13",
     "react-slick": "^0.28.0",
