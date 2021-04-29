@@ -10,12 +10,17 @@ const Title = styled.p`
   opacity: 1;
 `;
 
-const Quote = styled.p`
+const Quote = styled.q`
   text-align: left;
   font: normal normal normal 35px/41px liberation-sans;
   letter-spacing: 3.5px;
   color: ${theme.palette.black};
   opacity: 1;
+  /* quotes: "“" "”"; */
+`;
+
+const Star = styled.span`
+  font-size: 48px;
 `;
 
 export default function Review(props) {
@@ -23,8 +28,8 @@ export default function Review(props) {
 
   return (
     <div>
-      {/* <Stars /> */}
-      <Title className='mt-5'>{title}</Title>
+      <Star>{'★'.repeat(rate)}</Star>
+      <Title className=''>{title}</Title>
       <Quote className='mt-5'>{quote}</Quote>
     </div>
   )
