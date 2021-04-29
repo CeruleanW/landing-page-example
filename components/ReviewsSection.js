@@ -32,7 +32,7 @@ const sectionBgColor = theme.palette.blue;
 
 export function ReviewsSection() {
   return (
-    <SingleColorSection id='reviews' className={'flex flex-col'} sectionBgColor={sectionBgColor} >
+    <SingleColorSection id='reviews' className={'flex flex-col'} sectionBgColor={sectionBgColor} height='large'>
       <WithLayoutTopMenu sectionBgColor={sectionBgColor} />
       <div className={'flex flex-grow mt-56'}>
         <SpeakContainer className='relative ml-12 flex-shrink-0'>

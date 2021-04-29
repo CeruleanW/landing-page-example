@@ -14,6 +14,7 @@ export const theme = createMuiTheme({
     yellow: '#FFB33F',
     blue: '#1FE1E9',
     red: '#D34848',
+    red2: '#D14747',
     textPrimary: '#FFFFFF',
   },
 });

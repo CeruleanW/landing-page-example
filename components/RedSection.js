@@ -18,7 +18,7 @@ const Subtitle = styled.p`
 
 export function RedSection() {
   return (
-    <SingleColorSection id='red' className={'flex flex-col'} sectionBgColor={sectionBgColor} >
+    <SingleColorSection id='red' className={'flex flex-col'} sectionBgColor={sectionBgColor} height='large'>
       <WithLayoutTopMenu sectionBgColor={sectionBgColor} />
       <div className={'flex flex-grow'}>
         <div className={'flex flex-col ml-36 mt-64 max-w-4xl'}>
