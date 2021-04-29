@@ -15,7 +15,7 @@ export function CTASection() {
       sectionBgColor={sectionBgColor}
       height='medium'
     >
-      <WithLayoutTopMenu noTryItNow={true} />
+      <WithLayoutTopMenu noTryItNow={true} sectionBgColor={sectionBgColor}/>
       <div className={'flex mt-48 items-center justify-center'}>
           <div>
             <H2 color='red'>GET EXP|CON NOW</H2>

@@ -6,26 +6,12 @@ import { theme } from '../styles/theme';
 import styled from 'styled-components';
 import { WithLayoutTopMenu } from './WithLayoutTopMenu';
 import { Subtitle } from './Typography';
+import { BgImage } from './BgImage';
 
 const sectionBgColor = theme.palette.yellow;
 
 const YellowSectionContainer = styled(BaseSection)`
   background-color: ${sectionBgColor};
-`;
-
-const BgImageDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  background-image: url('./images/Image 4.png');
-  background-size: cover;
-  z-index: 0;
-  mask: url('./circle.svg') 30% 29% / 360px no-repeat,
-    url('./circle.svg') 6% 80% / 590px no-repeat,
-    url('./circle.svg') 110% 130% / 480px no-repeat
-      ${(props) =>
-        props.x && props.y
-          ? `, url('./circle.svg') ${props.x}px ${props.y}px / 200px no-repeat`
-          : ';'};
 `;
 
 const ContentContainer = styled.div`
@@ -35,27 +21,32 @@ const ContentContainer = styled.div`
 // reveal an extra circle for the image when hover
 export function YellowSection() {
   const [mousePosition, setMousePosition] = useState([0, 0]);
+  const sectionRef = useRef(null);
 
   const handleMouseMove = (event) => {
-      setMousePosition([
-        event.nativeEvent.offsetX - 100,
-        event.nativeEvent.offsetY - 100
-      ]);
+    const rect = sectionRef.current.getBoundingClientRect();
+    const x = event.clientX - rect.left - 120; //x position within the element.
+    const y = event.clientY - rect.top - 120;  //y position within the element.
+    setMousePosition([x, y])
   };
 
-  const handleMouseOut = () => {
+  const handleMouseOut = (event) => {
+    // if (event.currentTarget !== sectionRef.current) {
+    //   return;
+    // }
     setMousePosition([0, 0]);
   };
 
   return (
-    <YellowSectionContainer id='yellow' className={'flex flex-col relative'} height='large'>
-      <BgImageDiv
-        className={'absolute'}
-        onMouseMove={handleMouseMove}
-        onMouseOut={handleMouseOut}
-        x={mousePosition[0]}
-        y={mousePosition[1]}
-      />
+    <YellowSectionContainer
+      id='yellow'
+      className={'flex flex-col relative'}
+      height='large'
+      onMouseLeave={handleMouseOut}
+      onMouseMove={handleMouseMove}
+      ref={sectionRef}
+    >
+      <BgImage x={mousePosition[0]} y={mousePosition[1]} />
       <WithLayoutTopMenu sectionBgColor={sectionBgColor} />
       <div className={'flex relative'}>
         <ContentContainer className='absolute top-80 right-32'>
