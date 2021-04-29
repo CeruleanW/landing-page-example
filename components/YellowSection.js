@@ -5,7 +5,7 @@ import { BaseSection } from './BaseSection';
 import { theme } from '../styles/theme';
 import styled from 'styled-components';
 import { WithLayoutTopMenu } from './WithLayoutTopMenu';
-import { Subtitle } from './Subtitle';
+import { Subtitle } from './Typography';
 
 const sectionBgColor = theme.palette.yellow;
 
@@ -48,7 +48,7 @@ export function YellowSection() {
   };
 
   return (
-    <YellowSectionContainer id='yellow' className={'flex flex-col relative'}>
+    <YellowSectionContainer id='yellow' className={'flex flex-col relative'} height='large'>
       <BgImageDiv
         className={'absolute'}
         onMouseMove={handleMouseMove}

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
-import { theme } from '../styles/theme';
+import {typographyStyles} from './Typography';
+
 
 const Heading = styled.h2`
-  text-align: left;
+  ${typographyStyles}
   font: normal normal bold 74px/90px liberation-sans;
   letter-spacing: 7.4px;
-  color: ${props => props.color ? theme.palette[props.color] : theme.palette.white};
-  opacity: 1;
 `;
 
 export default function H2(props) {
+  const {color, className, children} = props;
+
   return (
-    <Heading color={props.color}>
-      {props.children}
+    <Heading color={color ?? 'white'} className={className} >
+      {children}
     </Heading>
   )
 }

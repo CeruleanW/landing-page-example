@@ -3,7 +3,7 @@ import H2 from './H2';
 import { WithLayoutTopMenu } from './WithLayoutTopMenu';
 import { SingleColorSection } from './BaseSection';
 import { theme } from '../styles/theme';
-import { Subtitle } from './Subtitle';
+import { Subtitle } from './Typography';
 
 const sectionBgColor = theme.palette.black;
 
@@ -19,7 +19,7 @@ export function CTASection() {
       <div className={'flex mt-48 items-center justify-center'}>
           <div>
             <H2 color='red'>GET EXP|CON NOW</H2>
-            <Subtitle color='white'>Purchase and download the app.</Subtitle>
+            <Subtitle textColor='white'>Purchase and download the app.</Subtitle>
           </div>
           <div className='ml-96'>
             <TryItNowButton type={'colored'} size={'large'}/>

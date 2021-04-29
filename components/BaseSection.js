@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {theme} from '../styles/theme';
 
 export const BaseSection = styled.section`
   position: relative;
@@ -8,8 +9,10 @@ export const BaseSection = styled.section`
       return '812px';
     } else if (props.height === 'short') {
       return '512px';
-    } else {
+    } else if (props.height === 'large'){
       return '1080px';
+    } else if (props.height) {
+      return props.height;
     }
   }};
   overflow: hidden;

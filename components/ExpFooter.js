@@ -25,7 +25,7 @@ export default function ExpFooter() {
       <PrimaryText className={'text-center mt-32'} >EXP|CON</PrimaryText>
       <SecondaryText className={'text-center mt-10'}>
         <small>
-          2019 © All Rights Reserved | Speer Technologies Incorporated
+          2019 © All Rights Reserved | Lorem ipsum dolor sit amet
         </small>
       </SecondaryText>
     </SingleColorSection>

@@ -5,7 +5,6 @@ import {theme} from '../styles/theme';
 const MyH1 = styled(Typography)`
   font: normal normal bold 65px/79px liberation-sans;
   letter-spacing: 6.5px;
-  opacity: 1;
   display: block;
   color: ${theme.palette.primary.main};
 `;

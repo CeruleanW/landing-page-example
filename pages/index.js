@@ -20,7 +20,7 @@ export default function Home() {
           <HeroSection />
           <RedSection />
           <YellowSection />
-          <PerksSection></PerksSection>
+          <PerksSection/>
           <ReviewsSection></ReviewsSection>
           <CTASection></CTASection>
           <ExpFooter />

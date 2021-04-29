@@ -1,4 +1,4 @@
-import { Box, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import TryItNowButton from './TryItNowButton';
 import ExpMenu from './ExpMenu';
 import H1 from './H1';
@@ -26,15 +26,15 @@ export function HeroSection() {
 
   return (
     <>
-      <BaseSection id='hero'>
+      <BaseSection id='hero' height='large'>
         <div className='w-full absolute' style={{height: '100%'}}>
           <CurtainSlider/>
         </div>
-        <Box className='w-full h-full z-10 absolute flex flex-col'>
+        <div className='w-full h-full z-10 absolute flex flex-col'>
           <div className={'w-max mt-10 ml-10'}>
             <ExpMenu className='z-10' bgColor='black' circleBgColor={theme.palette.blue}/>
           </div>
-          <Box className='w-full z-10 content-center pt-96'>
+          <div className='w-full z-10 content-center pt-96'>
             <H1>INTERACTIVE CONCERT EXPERIENCE</H1>
             <div className='flex justify-center mt-5'>
               <Text className={''}>
@@ -45,8 +45,8 @@ export function HeroSection() {
             <div className={'flex justify-center mt-5'}>
               <TryItNowButton type={'colored'} />
             </div>
-          </Box>
-        </Box>
+          </div>
+        </div>
       </BaseSection>
     </>
   );
