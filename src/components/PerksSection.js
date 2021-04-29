@@ -22,7 +22,7 @@ export function PerksSection(props) {
       className={'flex flex-col'}
       sectionBgColor={bgcolor ?? theme.palette.black}
     >
-      <WithLayoutTopMenu buttonType='colored' noTryItNow={noTryItNow ?? false} />
+      <WithLayoutTopMenu buttonType='colored' noTryItNow={noTryItNow ?? false} sectionBgColor={bgcolor ?? theme.palette.black} />
       <div className='ml-36 mt-48 mb-32'>
         <H2 color={mainTextColor} >PERKS</H2>
         <div className='mt-16 grid gap-40 grid-cols-3 w-11/12'>

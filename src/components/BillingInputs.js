@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-  CountryDropdown,
-} from 'react-country-region-selector';
-import TextFieldItem, {StyledLabel} from './TextFieldItem';
+import { CountryDropdown } from 'react-country-region-selector';
+import TextFieldItem, { StyledLabel } from './TextFieldItem';
 import FieldsetWrapper from './FieldsetWrapper';
 import styled from 'styled-components';
 
@@ -15,21 +13,23 @@ const StyledCountryDropdown = styled(CountryDropdown)`
 `;
 
 export function BillingInputs(props) {
-  const handleCountrySelect = () => {
-    
-  }
-  const {groupTitle} = props;
+  const handleCountrySelect = () => {};
+  const { groupTitle } = props;
 
   return (
     <FieldsetWrapper legend={groupTitle} className='pt-3'>
-      <TextFieldItem name='FULL NAME'/>
+      <TextFieldItem name='FULL NAME' />
       <TextFieldItem name='BILLING ADDRESS' />
       <TextFieldItem name='CITY' />
       <TextFieldItem name='COUNTRY' />
       <TextFieldItem name='POSTAL CODE' />
       <div className='mt-5'>
         <StyledLabel htmlFor='country'>COUNTRY</StyledLabel>
-        <StyledCountryDropdown defaultOptionLabel='' onChange={handleCountrySelect} id={'country'}/>
+        <StyledCountryDropdown
+          defaultOptionLabel=''
+          onChange={handleCountrySelect}
+          id={'country'}
+        />
       </div>
     </FieldsetWrapper>
   );
