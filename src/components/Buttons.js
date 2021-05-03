@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import { Button } from '@material-ui/core';
 import { theme } from '../styles/theme';
 
-const handleSzie = (props) => {
+const handleSize = (props) => {
   const size = props.size;
   if (size === 'small') {
     return { width: '200px', height: '48px' };
@@ -13,7 +13,7 @@ const handleSzie = (props) => {
   }
 };
 
-export const BaseButton = styled.button.attrs(handleSzie)`
+export const BaseButton = styled.button.attrs(handleSize)`
   border-radius: 79px;
   opacity: 1;
   width: ${(props) => props.width};
