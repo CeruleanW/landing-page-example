@@ -6,7 +6,7 @@ Repo: https://github.com/CeruleanW/landing-page-example
 
 > A landing page rich with graphic effects
 
-![img1](https://i.imgur.com/b1L1ekk.gif)
+![img1](https://i.imgur.com/hhW4piu.gif)
 
 ![img2](https://i.imgur.com/HsXYYhw.gif)
 
