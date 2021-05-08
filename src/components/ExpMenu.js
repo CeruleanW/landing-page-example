@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { theme } from '../styles/theme';
 import { Transition } from 'react-transition-group';
 
-
 const openedVisibleZindex = 1000;
 const openMenuTransitionStyles = css`
   transition: 0.7s;
@@ -67,11 +66,6 @@ const ListText = styled.p`
   text-align: left;
   font: normal normal bold 47px/57px liberation-sans;
   letter-spacing: 4.7px;
-  color: ${theme.palette.white};
-  &:hover {
-    color: ${(props) => props.hoverColor};
-  }
-  opacity: 1;
 `;
 
 const Ul = styled.ul`
@@ -84,15 +78,42 @@ const Ul = styled.ul`
   z-index: ${openedVisibleZindex};
 `;
 
+const NavLink = styled.a`
+  color: ${theme.palette.white};
+  &:hover {
+    color: ${(props) => props.hoverColor};
+  }
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 8px;
+    left: -50%;
+    background-color: ${(props) => props.hoverColor};
+    opacity: 1;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:hover:before {
+    left: 0;
+    transform: scaleX(1);
+  }
+`;
+
+const Li = styled.li`
+  position: relative;
+`;
+
 const MenuItem = (props) => {
   const { text, link, hoverColor } = props;
 
   return (
-    <li>
-      <a href={link}>
-        <ListText hoverColor={hoverColor}>{text}</ListText>
-      </a>
-    </li>
+    <Li>
+      <NavLink href={link} hoverColor={hoverColor}>
+        <ListText>{text}</ListText>
+      </NavLink>
+    </Li>
   );
 };
 
@@ -138,7 +159,7 @@ export default function ExpMenu(props) {
 
 function getFontSizeValues(size) {
   // size: small | regular | object
-  // return: string 
+  // return: string
   if (size === 'small') {
     return '48px';
   } else if (size === 'regular') {
@@ -152,7 +173,7 @@ function getFontSizeValues(size) {
 
 function getIconSizeValues(size) {
   if (size === 'small') {
-    return {iconwidth: '56px', iconheight: '34px'};
+    return { iconwidth: '56px', iconheight: '34px' };
   } else if (size === 'regular') {
     return '52px';
   } else {
