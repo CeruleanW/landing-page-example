@@ -1,8 +1,7 @@
-import { Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import {theme} from '../styles/theme';
 
-const MyH1 = styled(Typography)`
+const MyH1 = styled.h1`
   font: normal normal bold 65px/79px liberation-sans;
   letter-spacing: 6.5px;
   display: block;

@@ -15,8 +15,7 @@ export default function Home() {
         <title>Main Landing Page</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main>
-        <Container maxWidth={'xl'}>
+      <main className='m-auto' style={{maxWidth: '1920px'}} >
           <HeroSection />
           <RedSection />
           <YellowSection />
@@ -24,7 +23,6 @@ export default function Home() {
           <ReviewsSection></ReviewsSection>
           <CTASection></CTASection>
           <ExpFooter />
-        </Container>
       </main>
     </>
   );

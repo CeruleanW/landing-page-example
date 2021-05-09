@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { CountryDropdown } from 'react-country-region-selector';
 import TextFieldItem, { StyledLabel } from './TextFieldItem';
 import FieldsetWrapper from './FieldsetWrapper';
@@ -13,7 +13,7 @@ const StyledCountryDropdown = styled(CountryDropdown)`
 `;
 
 export function BillingInputs(props) {
-  const handleCountrySelect = () => {};
+  const [country, setCountry] = useState(null);
   const { groupTitle } = props;
 
   return (
@@ -27,7 +27,8 @@ export function BillingInputs(props) {
         <StyledLabel htmlFor='country'>COUNTRY</StyledLabel>
         <StyledCountryDropdown
           defaultOptionLabel=''
-          onChange={handleCountrySelect}
+          onChange={(val) => setCountry(val)}
+          value={country}
           id={'country'}
         />
       </div>
