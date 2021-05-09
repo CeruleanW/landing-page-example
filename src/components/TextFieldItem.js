@@ -7,6 +7,7 @@ const StyledInput = styled.input`
   width: 100%;
   height: 74px;
   font-size: 32px;
+  transition: all 0.2s ease-in-out 0s;
   &:focus {
     border-bottom: 8px solid blue;
   }

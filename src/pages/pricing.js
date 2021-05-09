@@ -36,7 +36,6 @@ const featureList3 = [
 
 const sectionBgColor = theme.palette.black;
 
-
 const Heading = styled.h2`
   ${typographyStyles}
 `;
@@ -50,7 +49,7 @@ const StyledHeading = styled(Heading)`
 
 export default function pricing() {
   return (
-    <div>
+    <div className='m-auto' style={{ maxWidth: '1920px' }}>
       <SingleColorSection id='pricing' sectionBgColor={sectionBgColor}>
         <WithLayoutTopMenu noTryItNow />
         <div className='p-28'>
@@ -84,7 +83,12 @@ export default function pricing() {
           </div>
         </div>
       </SingleColorSection>
-      <PerksSection bgcolor={theme.palette.red} mainTextColor='white' secondaryTextColor='black' noTryItNow={true}/>
+      <PerksSection
+        bgcolor={theme.palette.red}
+        mainTextColor='white'
+        secondaryTextColor='black'
+        noTryItNow={true}
+      />
       <ExpFooter />
     </div>
   );

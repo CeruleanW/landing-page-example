@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 import { ColoredButton } from '../components/Buttons';
 import ExpFooter from '../components/ExpFooter';
 import ExpMenu from '../components/ExpMenu';
@@ -10,6 +9,7 @@ import CreditCardInfo from '../components/CreditCardInfo';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { legendStyles } from '../components/FieldsetLegend';
+import { theme } from '../styles/theme';
 
 const Ol = styled.ol`
   list-style: decimal;
@@ -29,17 +29,23 @@ const StyledLink = styled.span`
   }
 `;
 
+const RootContainer = styled.div`
+  max-width: 1920px;
+  margin: auto;
+  background-color: ${theme.palette.white};
+  position: relative;
+`;
+
 export default function Payments() {
   const handleChange = () => {};
 
   return (
-    <div>
+    <RootContainer>
       <ExpMenu color={'black'} size={'small'} />
       <form className='p-12 pt-32'>
         <H2 color='black' className='mb-20'>
           PAYMENT
         </H2>
-
         <Ol className='mb-24'>
           <li className='mb-32 ml-16'>
             <PlanInputs
@@ -59,13 +65,19 @@ export default function Payments() {
         <div className='ml-16 max-w-xl'>
           <P>
             By continuing, I acknowledge that I’ve read and agree to the{' '}
-            <Link href='#'><StyledLink>Terms of Service</StyledLink></Link> {'& '}
-            <Link href='#'><StyledLink>Privacy Policy</StyledLink></Link>.
+            <Link href='#'>
+              <StyledLink>Terms of Service</StyledLink>
+            </Link>{' '}
+            {'& '}
+            <Link href='#'>
+              <StyledLink>Privacy Policy</StyledLink>
+            </Link>
+            .
           </P>
           <ColoredButton className='mt-8'>Download</ColoredButton>
         </div>
       </form>
       <ExpFooter />
-    </div>
+    </RootContainer>
   );
 }

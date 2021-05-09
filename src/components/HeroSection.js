@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import TryItNowButton from './TryItNowButton';
 import ExpMenu from './ExpMenu';
 import H1 from './H1';
@@ -9,7 +8,7 @@ import { useCurtains } from "react-curtains";
 import gsap from "gsap";
 import CurtainSlider from './CurtainSlider';
 
-const Text = styled(Typography)`
+const Text = styled.p`
   text-align: center;
   font: normal normal normal 32px/44px liberation-sans;
   letter-spacing: 3.2px;
