@@ -1,13 +1,14 @@
 # Landing Page Example - EXP | CON
 
-[Demo](https://landing-page-example.vercel.app/)
-[Repo](https://github.com/CeruleanW/landing-page-example)
+[Demo](https://landing-page-example.vercel.app/) | [Repo](https://github.com/CeruleanW/landing-page-example)
 
 > A responsive landing page rich with graphic effects and animations
 
 ![img1](https://github.com/CeruleanW/large-static-files/raw/master/piJYPfO%20-%20Imgur.gif)
 
 ![img2](https://i.imgur.com/HsXYYhw.gif)
+
+![](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/exp-demo-3.gif)
 
 ## Features
 
@@ -27,3 +28,5 @@
 - Gsap
 - Howler
 - Svgr
+- Canvas & WebGL
+
