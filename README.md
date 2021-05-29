@@ -4,11 +4,11 @@
 
 > A responsive landing page rich with graphic effects and animations
 
-![img1](https://github.com/CeruleanW/large-static-files/raw/master/piJYPfO%20-%20Imgur.gif)
+![img1](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exap-demo1.gif)
 
 ![img2](https://i.imgur.com/HsXYYhw.gif)
 
-![](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/exp-demo-3.gif)
+![](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exp-demo3.gif)
 
 ## Features
 
