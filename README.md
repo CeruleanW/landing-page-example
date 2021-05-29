@@ -29,4 +29,3 @@
 - Howler
 - Svgr
 - Canvas & WebGL
-
