@@ -8,7 +8,7 @@
 
 ![img2](https://i.imgur.com/HsXYYhw.gif)
 
-![](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exp-demo3.gif)
+![img3](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exp-demo3.gif)
 
 ## Features
 
