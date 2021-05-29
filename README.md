@@ -6,7 +6,7 @@
 
 ![img1](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exap-demo1.gif)
 
-![img2](https://i.imgur.com/HsXYYhw.gif)
+![img2](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exp-demo2.gif)
 
 ![img3](https://media.githubusercontent.com/media/CeruleanW/large-static-files/master/landing-page-exp-demo3.gif)
 
